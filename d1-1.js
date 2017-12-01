@@ -9,6 +9,13 @@ const input = "89219596999173583791527386872954869423796749511541239937319456252
 // convert input into an array of numbers
 const numbers = input.split('').map(i => parseInt(i, 10));
 
+function sum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
 // checks if numbers match next number
 function checkSequence(arr) {
   const output = [];
@@ -21,21 +28,10 @@ function checkSequence(arr) {
   if (arr[0] === arr[arr.length-1]) {
     output.push(arr[0]);
   }
-  return output;
+  return sum(output);
 }
 
-function sum(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum;
-}
-
-const numArr = checkSequence(numbers);
 
 
-console.log(sum(numArr));
 
-// check if next number is same as current
-// if it is, add it to sum
+console.log(checkSequence(numbers));
