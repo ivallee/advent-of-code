@@ -16,7 +16,7 @@ const rows = [
   "198 216 5700 4212 2370 143 5140 190 4934 539 5054 3707 6121 5211 549 2790",
   "3021 3407 218 1043 449 214 1594 3244 3097 286 114 223 1214 3102 257 3345"
 ];
-const testRow = ["124 356 31 642"];
+const testRow = ["124 356 31 642 902"];
 
 const arrays = testRow.map((row => {
   return row.split(" ").map(num => parseInt(num));
@@ -29,10 +29,10 @@ function findLargestNum(arr) {
      largest = arr[i]; 
     }
   }
-  console.log('largest', largest);
+  return largest;
 }
 
-
+findLargestNum(arrays[0]);
 // split string into array of numbers
 // run over each number, take largest and smallest
 // calculate difference, add difference to array
