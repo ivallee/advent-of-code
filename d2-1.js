@@ -25,11 +25,13 @@ const arrays = testRow.map((row => {
 function findLargestNum(arr) {
   let largest = 0;
   for (let i = 0; i < arr.length; i++) {
-    
+    if (arr[i] > largest) {
+     largest = arr[i]; 
+    }
   }
+  console.log('largest', largest);
 }
 
-console.log(arrays);
 
 // split string into array of numbers
 // run over each number, take largest and smallest
