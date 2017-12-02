@@ -18,15 +18,11 @@ const rows = [
 ];
 const testRow = ["2 124 356 31 642 902"];
 
-const arrays = testRow.map((row => {
-  return row.split(" ").map(num => parseInt(num));
-}));
-
 function findLargestNum(arr) {
   let largest = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > largest) {
-     largest = arr[i]; 
+      largest = arr[i]; 
     }
   }
   return largest;
@@ -36,11 +32,25 @@ function findSmallestNum(arr) {
   let smallest = arr[0];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] < smallest) {
-     smallest = arr[i]; 
+      smallest = arr[i]; 
     }
   }
   return smallest;
 }
+
+function calculateDifferences(arr) {
+  return arr.map(a => findLargestNum(a) - findSmallestNum(a));
+}
+
+// convert string rows to arrays
+const arrays = rows.map((row => {
+  return row.split(" ").map(num => parseInt(num));
+}));
+
+const differences = calculateDifferences(arrays);
+
+console.log(differences)
+
 
 
 // split string into array of numbers
