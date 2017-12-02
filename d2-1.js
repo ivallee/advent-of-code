@@ -42,18 +42,23 @@ function calculateDifferences(arr) {
   return arr.map(a => findLargestNum(a) - findSmallestNum(a));
 }
 
+function sum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
 // convert string rows to arrays
 const arrays = rows.map((row => {
   return row.split(" ").map(num => parseInt(num));
 }));
 
+// find differences
 const differences = calculateDifferences(arrays);
 
-console.log(differences)
+// calculate checksum
+const checksum = sum(differences);
 
-
-
-// split string into array of numbers
-// run over each number, take largest and smallest
-// calculate difference, add difference to array
-// sum differences
+console.log(checksum);
