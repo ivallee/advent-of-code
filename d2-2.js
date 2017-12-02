@@ -25,7 +25,7 @@ function checkDivisibility(arr) {
         divisible = a / b;
       }
     })
-  })
+  });
   return divisible;
 }
 
@@ -43,6 +43,5 @@ const arrays = rows.map((row => {
 }));
 
 const divided = arrays.map(arr => checkDivisibility(arr));
-
 
 console.log(sum(divided));
