@@ -513,22 +513,6 @@ const input = [
 "xzvfbf fopmfxu mvftgr mfupoxf coyhof talcc vpkslo"
 ];
 
-
-
-const t1 = "aa bb cc dd";
-const t2 = "aa bb cc dd aa";
-const t3 = "aa bb cc dd xx vf ef ht sa";
-
-
-
-
-
-const split = t2.split(" ");
-
-// for (let i = 0; i < split.length; i++) {
-//   const element = arr[i];
-  
-// }
 let isValid = 0;
 function checkForDuplicate(arr) {
   var valuesSoFar = Object.create(null);
@@ -545,7 +529,6 @@ function checkForDuplicate(arr) {
 function findValid(arr) {
   for (let i = 0; i < arr.length; i++) {
     const split = arr[i].split(" ");
-    console.log(checkForDuplicate(arr[i]));
     if (!checkForDuplicate(split)) {
       isValid++;
     }
