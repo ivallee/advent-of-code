@@ -1,4 +1,5 @@
-const input = ["xjtwn vjnxtw sxibvv mmws wjvtxn icawnd rprh",
+const input = [
+  "xjtwn vjnxtw sxibvv mmws wjvtxn icawnd rprh",
 "fhaa qwy vqbq gsswej lxr yzl wakcige mwjrl",
 "bhnlow huqa gtbjc gvj wrkyr jgvmhj bgs umo ikbpdto",
 "drczdf bglmf gsx flcf ojpj kzrwrho owbkl dgrnv bggjevc",
@@ -509,7 +510,8 @@ const input = ["xjtwn vjnxtw sxibvv mmws wjvtxn icawnd rprh",
 "mtgky xmwf zdko nnocxye gytkm ygp hixk xwmf",
 "maudjy okgjga uadjmy dzfrk omd",
 "azz ajdcqkd bcafn zaz dcjaqdk gylyzo",
-"xzvfbf fopmfxu mvftgr mfupoxf coyhof talcc vpkslo"];
+"xzvfbf fopmfxu mvftgr mfupoxf coyhof talcc vpkslo"
+];
 
 
 
@@ -524,14 +526,14 @@ const t3 = "aa bb cc dd xx vf ef ht sa";
 const split = t2.split(" ");
 
 // for (let i = 0; i < split.length; i++) {
-//   const element = array[i];
+//   const element = arr[i];
   
 // }
-
-function checkForDuplicates(array) {
+let isValid = 0;
+function checkForDuplicate(arr) {
   var valuesSoFar = Object.create(null);
-  for (var i = 0; i < array.length; ++i) {
-      var value = array[i];
+  for (var i = 0; i < arr.length; ++i) {
+      var value = arr[i];
       if (value in valuesSoFar) {
           return true;
       }
@@ -540,4 +542,16 @@ function checkForDuplicates(array) {
   return false;
 }
 
-console.log(hasDuplicates(split));
+function findValid(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    const split = arr[i].split(" ");
+    console.log(checkForDuplicate(arr[i]));
+    if (!checkForDuplicate(split)) {
+      isValid++;
+    }
+    
+  }
+}
+
+findValid(input);
+console.log(isValid);
