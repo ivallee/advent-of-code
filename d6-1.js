@@ -1,55 +1,16 @@
-const test = [0, 2, 7, 0];
-let cycles = 0;
-let last = [];
-const batches = [];
+const input = [10, 3, 15, 10, 5, 15, 5, 15, 9, 2, 5, 8, 5, 2, 3, 6];
 
-const redistribute = (arr) => {
-  
-  let max = Math.max(...arr);
-  const maxIndex = arr.indexOf(max);
-  const output = [...arr];
-  output[maxIndex] = 0;
+const seenBefore = new Set();
 
-  for (let i = maxIndex + 1; max > 0; i++) {
-    if  (i === arr.length) {
-      i = 0;
-    }
-    max -= 1;
-    output[i] += 1;
+
+while (!seenBefore.has(input.join(','))) {
+  seenBefore.add(input.join(','))
+  let max = Math.max(...input)
+  let maxIndex = input.indexOf(max)
+  input[maxIndex] = 0
+  for(let i = 1; i <= max; i++) {
+    input[(maxIndex + i) % input.length]++
   }
-  return output;
-};
-
-const arraysEqual = (arr1, arr2) => {
-  if(arr1.length !== arr2.length)
-      return false;
-  for(var i = arr1.length; i--;) {
-      if(arr1[i] !== arr2[i])
-          return false;
-  }
-  return true;
-};
-
-const something = (arr) => {
-  arr.forEach(a => {
-   arr.forEach(b => {
-    console.log(a, b)
-   });
-  });
 }
 
-last = redistribute(test)
-console.log(last)
-batches.push(last)
-
-prev = redistribute(last)
-console.log(prev)
-batches.push(prev)
-console.log(batches);
-
-something(batches)
-
-
-
-
-// check if 'last' is same as any in array
+console.log(seenBefore.size)
