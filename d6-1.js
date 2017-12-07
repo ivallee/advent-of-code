@@ -30,6 +30,14 @@ const arraysEqual = (arr1, arr2) => {
   return true;
 };
 
+const something = (arr) => {
+  arr.forEach(a => {
+   arr.forEach(b => {
+    console.log(a, b)
+   });
+  });
+}
+
 last = redistribute(test)
 console.log(last)
 batches.push(last)
@@ -38,6 +46,8 @@ prev = redistribute(last)
 console.log(prev)
 batches.push(prev)
 console.log(batches);
+
+something(batches)
 
 
 
