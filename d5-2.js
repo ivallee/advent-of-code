@@ -1091,27 +1091,19 @@ const input = [
   -858
 ];
 
-const test = [0, 3, 0, 1, -3];
-
-let pos = test[0];
-
-
-function move(arr) {
-  let pos = [];
-  pos[0] = arr[0];
-  for (let i = 0; i < arr.length; i++) {
-    let steps = arr[i];
-    if (pos >= 0 ) {
-      pos = steps;
+var steps = 0
+var pos = 0
+function move (arr) {
+  console.log(arr)
+  while (typeof arr[pos] !== 'undefined') {
+    if (arr[pos] >= 3) {
+      pos += arr[pos]--
+      steps++;
     } else {
-      pos -= steps;
+      pos += arr[pos]++
+      steps++
     }
-    element++;
-    console.log(pos);
   }
+console.log(steps)
 }
-
-// move current number of positions away.
-// current position + 1
-
-move(test);
+move(input);

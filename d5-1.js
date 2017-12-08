@@ -1091,71 +1091,15 @@ const input = [
   -858
 ];
 
-const test = [0, 3, 0, 1, -3];
-
-let curr = 0;
-
-
-function move(arr) {
-  // console.log('current pos: ', curr)
-  let val = arr[curr];
-  // console.log('value: ', val)
-  console.log(val > 0, val)
-
-  if (val > 0) {
-    curr += val;
-    arr[val]++;
-  } else if (val < 0) {
-    console.log('this is running still', val)
-    curr -= val;
-    arr[val]++;
-  } else {
-    arr[val]++;
-  }
-
-  // switch (val) {
-  //   case (val > 0):
-  //     curr += val;
-  //     console.log('currrrrrrrrrrrr', curr)
-  //     break;
-  //   case val < 0:
-  //     curr -= val;
-  //     break;
-  //   default:
-  //     break;
-  // }
-  // arr[val]++;
-  return
-}
-
-
-
-// move current number of positions away.
-// current position + 1
-
 var steps = 0
 var pos = 0
-function part1 (array) {
-  console.log(array)
-  while (typeof array[pos] !== 'undefined') {
-    if (array[pos] >= 3) {
-      pos += array[pos]--
-      steps++;
-    } else {
-      pos += array[pos]++
+function move (arr) {
+  console.log(arr)
+  while (typeof arr[pos] !== 'undefined') {
+      pos += arr[pos]++
       steps++
-    }
-
   }
 console.log(steps)
 }
 
-part1(input)
-// move(test);
-// console.log(test);
-// move(test);
-// console.log(test);
-// move(test);
-// console.log(test);
-// move(test);
-// console.log(test);
+move(input);
