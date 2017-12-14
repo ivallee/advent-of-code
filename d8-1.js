@@ -31,7 +31,7 @@ const solve = (arr) => {
       registers[registerA] = eval(registers[registerA] + direction + " " + (change));
     }
   }
-  const objArr = Object.keys(registers).map(function (key) { return registers[key]; });
+  const objArr = Object.keys(registers).map(key =>  registers[key])
   return Math.max(...objArr);
 };
 
